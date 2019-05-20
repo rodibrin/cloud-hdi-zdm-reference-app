@@ -16,9 +16,9 @@ node() {
   }
   
   stage('deploy') {
-    cloudFoundryDeploy( script: this, 
-                        cloudFoundry: [mtaPath: 'cloud-hdi-zdm-ref-app.blue/mta-jee/cloud-hdi-zdm-ref-app-blue-0.0.1.mtar', 
-                                       mtaExtensionDescriptor:'config.mtaext'] 
+    cloudFoundryDeploy( script: this,
+                        mtaPath: 'cloud-hdi-zdm-ref-app.blue/mta-jee/cloud-hdi-zdm-ref-app-blue-0.0.1.mtar', 
+                        mtaExtensionDescriptor:'config.mtaext'
     )
   }
 }
