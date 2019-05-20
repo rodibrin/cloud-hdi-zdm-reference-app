@@ -4,14 +4,14 @@ node() {
 
   stage('prepare') {
 
-      checkout scm
+    checkout scm
 
-      setupCommonPipelineEnvironment script:this
-
-      checkChangeInDevelopment script: this
+    setupCommonPipelineEnvironment script:this
   }
 
   stage('build') {
+    dir("cloud-hdi-zdm-ref-app.blue/mta-jee") {
       mtaBuild script: this
+    }
   }
 }
