@@ -5,8 +5,8 @@ steps:
     buildTarget: 'CF'
   cloudFoundryDeploy:
     verbose: true
-    deployTool: 'cf_native'
-    deployType: 'standard'
+    deployTool: 'mtaDeployPlugin'
+    deployType: 'blue-green'
     cloudFoundry:
       org: 'D046169trial_trial'
       space: 'dev'
