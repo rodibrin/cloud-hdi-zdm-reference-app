@@ -1,7 +1,10 @@
+general:
+  verbose: true
 steps:
   mtaBuild:
     buildTarget: 'CF'
   cloudFoundryDeploy:
+    verbose: true
     deployTool: 'cf_native'
     deployType: 'standard'
     cloudFoundry:
