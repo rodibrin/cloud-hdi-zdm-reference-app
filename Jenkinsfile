@@ -17,7 +17,7 @@ node() {
     }
   }
   
-  echo "deploy mtar=${mtaBlue}"
+  echo "deploy mtar=${mtarBlue}"
   
   stage('deploy') {
     cloudFoundryDeploy( script: this,
