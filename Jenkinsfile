@@ -9,15 +9,17 @@ node() {
     setupCommonPipelineEnvironment script:this
   }
 
+  def mtarBlue
+
   stage('build') {
     dir("cloud-hdi-zdm-ref-app.blue/mta-jee") {
-      mtaBuild script: this, mtar: 'cloud-hdi-zdm-ref-app-blue-0.0.1.mtar'
+      mtarBlue = mtaBuild script: this
     }
   }
   
   stage('deploy') {
     cloudFoundryDeploy( script: this,
-                        mtaPath: 'cloud-hdi-zdm-ref-app.blue/mta-jee/cloud-hdi-zdm-ref-app-blue-0.0.1.mtar', 
+                        mtaPath: mtarBlue, 
                         mtaExtensionDescriptor:'config.mtaext'
     )
   }
