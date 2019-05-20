@@ -17,9 +17,11 @@ node() {
     }
   }
   
+  echo "deploy mtar=${mtaBlue}"
+  
   stage('deploy') {
     cloudFoundryDeploy( script: this,
-                        mtaPath: mtarBlue, 
+                        mtaPath: 'cloud-hdi-zdm-ref-app.blue/mta-jee/cloud-hdi-zdm-ref-app.mtar', 
                         mtaExtensionDescriptor:'config.mtaext'
     )
   }
