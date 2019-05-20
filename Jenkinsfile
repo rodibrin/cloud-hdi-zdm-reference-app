@@ -11,10 +11,10 @@ node() {
 
   stage('build') {
     dir("cloud-hdi-zdm-ref-app.blue/mta-jee") {
-      mtaBuild script: this mtar: cloud-hdi-zdm-ref-app-blue-0.0.1.mtar
+      mtaBuild script: this, mtar: cloud-hdi-zdm-ref-app-blue-0.0.1.mtar
     }
     dir("cloud-hdi-zdm-ref-app.green/mta-jee") {
-      mtaBuild script: this mtar: cloud-hdi-zdm-ref-app-green-0.0.1.mtar
+      mtaBuild script: this, mtar: cloud-hdi-zdm-ref-app-green-0.0.1.mtar
     }
   }
   
